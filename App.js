@@ -1,20 +1,30 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './src/IT19166834/Login';
+import RegisterComponent from './src/IT19166834/Register';
+import ProfileComponent from './src/IT19166834/Profile';
+import EditProfile from './src/IT19166834/EditProfile';
+import EditPasswordComponent from './src/IT19166834/EditPassword';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen 
+            name="Login"
+            component={Login}
+            options={{title: 'Login'}}
+          />
+          <Stack.Screen name="Register" component={RegisterComponent} />
+          <Stack.Screen name="Profile" component={ProfileComponent} />
+          <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name="EditPassword" component={EditPasswordComponent} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
