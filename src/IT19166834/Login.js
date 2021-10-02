@@ -1,17 +1,42 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     View, 
     Text, 
     Button, 
     StyleSheet,
     TextInput,
-    SafeAreaView
+    SafeAreaView,
+    Alert
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
+import axios from 'axios';
 
 export default function Login({navigation}){
-    const [username, setUserName] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loginData, setLoginData] = useState([
+        {
+            email: '',
+            password: ''
+        }
+    ])
+
+    const onChangeInput = e => {
+        const {name, value} = e.target;
+        setLoginData({...loginData, [name]:value})
+    }
+
+    const handleSignIn = async e => {
+        e.preventDefault()
+        try {
+            await axios.post('http:/localhost:3000/user/UserLogin', {...loginData})
+            
+        } catch (err) {
+            Alert.alert("Wrong...!")
+        }
+    }
+    
+
 
     return(
         <SafeAreaView >
@@ -23,20 +48,23 @@ export default function Login({navigation}){
             <View style={{flex: 1, alignItems: 'center', marginTop: 140}}>
                 <TextInput 
                     style={styles.todoInput}
-                    value={username}
-                    placeholder= 'Username'
-                    onChangeText={text => setUserName(text)}
+                    value={email}
+                    placeholder= 'Email'
+                    onChangeText={text => setEmail(text)}
+                    //onChangeText={text => onChangeInput}
                 />
                 <TextInput 
                     style={styles.todoInput}
                     value={password}
                     placeholder= 'Password'
-                    onChangeText={text => setPassword(text)}
+                    //onChangeText={text => setPassword(text)}
+                    onChange={onChangeInput}
                 />
             </View>
 
             <View style={styles.signInButton}>
                 <Button title="Sign in" onPress = {() => navigation.navigate('Register')} />
+                {/*<Button title="Sign in" />*/}
             </View>
 
             <View style={styles.signUpText}>

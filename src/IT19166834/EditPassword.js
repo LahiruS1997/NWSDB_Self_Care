@@ -25,7 +25,7 @@ function EditPassword({navigation}) {
                         style={styles.todoInput}
                         value={currentPassword}
                         placeholder= 'Current Password'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setUserName(text)}    
                     />
                     <TextInput 
                         style={styles.todoInput}

@@ -5,7 +5,8 @@ import {
     StyleSheet,
     TextInput,
     Button,
-    SafeAreaView
+    SafeAreaView,
+    Image
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 
@@ -17,7 +18,9 @@ function Profile({navigation}) {
         <SafeAreaView>
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
                 <View style={styles.rectangleCover} />
-                <View style={styles.circleProfile} />
+                <View>
+                    <Image style={styles.imageProfile} source={require('../../assets/profile/profile_icon.png')} />
+                </View>
                 <Text style={styles.usernameText}>Username</Text>
 
                 <View style={{flex: 1, alignItems: 'center', marginTop: 160}}>
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
     },
     usernameText: {
         fontSize: 25,
-        marginTop: -40,
+        marginTop: -120,
         marginLeft: 140
     },
     todoInput: {
@@ -109,5 +112,11 @@ const styles = StyleSheet.create({
         width: '80%',
         borderRadius: 20,
         marginTop: 10
+    },
+    imageProfile: {
+        width: 100,
+        height: 100,
+        marginTop: -190,
+        marginLeft: 20
     }
 })

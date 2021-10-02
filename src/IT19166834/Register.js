@@ -1,15 +1,81 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Button, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button, SafeAreaView, Alert} from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 
+
+const initialState = {
+    fullname: '',
+    username: '',
+    email: '',
+    nicNumber: '',
+    mobileNumber: '',
+    password: ''
+}
+
 export default function Register({navigation}){
-    const [fullName, setFullName] = useState('')
-    const [username, setUsername] = useState('')
+    const [fullname, setFullName] = useState('')
+    const [userName, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [nicNumber, setNicNumber] = useState('')
     const [mobileNumber, setMobileNumber] = useState('')
     const [password, setPassword] = useState('')
     const [reEnterPassword, setReEnterPassword] = useState('')
+
+
+
+    const checkTextInput = () => {
+        //Check for the Name TextInput
+        if (!fullname.trim()) {
+          alert('Please Enter full Name');
+          return;
+        }
+        //Check for the Email TextInput
+        if (!userName.trim()) {
+          alert('Please Enter User Name');
+          return;
+        }
+        if (!email.trim()) {
+            alert('Please Enter full Name');
+            return;
+        }
+          //Check for the Email TextInput
+        if (!nicNumber.trim()) {
+            alert('Please Enter User Name');
+            return;
+        }
+        if (!mobileNumber.trim()) {
+            alert('Please Enter full Name');
+            return;
+        }
+          //Check for the Email TextInput
+        if (!password.trim()) {
+            alert('Please Enter User Name');
+            return;
+        }
+        //Checked Successfully
+        fetch("http:/localhost:3000/user/NewUser", {
+            method: "post",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                fullname,
+                userName,
+                email,
+                nicNumber,
+                mobileNumber,
+                password,
+            })
+        })
+        .then(res => res.json(),
+            Alert.alert("Successfully Registered.!"),
+            navigation.navigate("Login")
+        )
+    };
+
+    const onRegister = () => {
+        navigation.navigate("Profile")
+    }
 
     return(
         <SafeAreaView style={{backgroundColor: 'white', height: 750}}>
@@ -20,49 +86,44 @@ export default function Register({navigation}){
                 <View style={{flex: 1, alignItems: 'center', marginTop: 70}}>
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={fullname}
                         placeholder= 'Full Name'
-                        onChangeText={text => setUserName(text)}
+                        required
+                        onChangeText={text => setFullName(text)}
                     />
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={userName}
                         placeholder= 'Username'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setUsername(text)}
                     />
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={email}
                         placeholder= 'Email'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setEmail(text)}
                     />
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={nicNumber}
                         placeholder= 'NIC number'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setNicNumber(text)}
                     />
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={mobileNumber}
                         placeholder= 'Mobile number'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setMobileNumber(text)}
                     />
                     <TextInput 
                         style={styles.todoInput}
-                        value={username}
+                        value={password}
                         placeholder= 'Password'
-                        onChangeText={text => setUserName(text)}
-                    />
-                    <TextInput 
-                        style={styles.todoInput}
-                        value={username}
-                        placeholder= 'Re enter passsword'
-                        onChangeText={text => setUserName(text)}
+                        onChangeText={text => setPassword(text)}
                     />
 
                     <View style={styles.signUpButton}>
-                        <Button title="Sign Up" onPress = {() => navigation.navigate('Profile')} />
+                        <Button title="Sign Up" onPress={() => onRegister()} />
                     </View>
                 </View>
 
