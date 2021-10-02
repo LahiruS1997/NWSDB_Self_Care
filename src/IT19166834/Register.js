@@ -71,7 +71,7 @@ export default function Register({navigation}){
             Alert.alert("Successfully Registered.!"),
             navigation.navigate("Login")
         )
-    };
+    };  
 
     const onRegister = () => {
         navigation.navigate("Profile")
