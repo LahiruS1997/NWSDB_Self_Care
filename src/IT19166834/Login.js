@@ -74,7 +74,7 @@ export default function Login({navigation}){
             </LinearGradient>
 
         </SafeAreaView>
-    )
+    )   
 }
 const styles = StyleSheet.create({
     circleShape: {
