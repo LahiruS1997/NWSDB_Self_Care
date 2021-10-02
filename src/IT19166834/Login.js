@@ -36,7 +36,7 @@ export default function Login({navigation}){
             </View>
 
             <View style={styles.signInButton}>
-                <Button title="Sign in" onPress = {() => navigation.navigate('Register')} />
+                <Button title="Sign in" onPress = {() => navigation.navigate('SampleHome')} />
             </View>
 
             <View style={styles.signUpText}>
