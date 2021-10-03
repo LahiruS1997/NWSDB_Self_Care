@@ -9,12 +9,10 @@ import {
     ScrollView
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
+import Line from './Line'
 
 function BillHistory({navigation}) {
-    const [StartDate, setStartDate] = useState('')
-    const [userName, setuserName] = useState('')
-    
-
+      
     return (
         <SafeAreaView>
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
@@ -36,7 +34,7 @@ function BillHistory({navigation}) {
                                 <Button title="Billing" onPress = {() => navigation.navigate('BillCalculator')}></Button>
                             </View>
                             <View style={styles.buttonCancel}>
-                                <Button title="Payments" onPress = {() => navigation.navigate('PaymentsHistory')} style={{backgroundColor: 'white'}}></Button>
+                                <Button title="Payments" onPress = {() => navigation.navigate('PaymentsHistory')} style={{backgroundColor: 'black'}}></Button>
                             </View> 
                         </View>
 
@@ -48,12 +46,15 @@ function BillHistory({navigation}) {
                                 <Text style={styles.number3}>Due:    -1440.17</Text>
                                 
                             </View>
+                            
+
                             <View style={styles.miniRectangle8}>
                                 
                                 <Text style={styles.number1}>457.00LKR</Text>
                                 
                             </View>
                         </View>
+                        <Line />
                         <View style={styles.payments}>
                             <View style={styles.miniRectangle7}>
                                 
@@ -69,6 +70,7 @@ function BillHistory({navigation}) {
                                 
                             </View>
                         </View>
+                        <Line />
                         <View style={styles.payments}>
                             <View style={styles.miniRectangle7}>
                                 
@@ -83,10 +85,11 @@ function BillHistory({navigation}) {
                                 <Text style={styles.number1}>500.00LKR</Text>
                                 
                             </View>
-                            <View style={styles.buttonCancel}>
+                            {/* <View style={styles.buttonCancel}>
                                 <Button title="Payments" onPress = {() => navigation.navigate('PaymentsHistory')}></Button>
-                            </View> 
+                            </View>  */}
                         </View>
+                        <Line />
                         
                         
                     </View>
@@ -169,11 +172,13 @@ const styles = StyleSheet.create({
     },
     navigatebuttons: {
         flexDirection: 'row',
-        backgroundColor: 'grey'
+        backgroundColor: 'grey',
+        borderRadius: 25,
+
     },
     miniRectangle7: {
         width: '50%',
-        height: 128,
+        height: 120,
         backgroundColor: 'white',
         marginTop: 20,     
         opacity:6,
@@ -181,7 +186,9 @@ const styles = StyleSheet.create({
     },
     number1: {
         fontSize: 25,
-        color: 'grey'
+        color: 'grey',
+        marginTop: 30
+
     },
     miniRectangle8: {
         width: '50%',
@@ -195,7 +202,9 @@ const styles = StyleSheet.create({
     },
     number2: {
         fontSize: 25,
-        color: 'black'
+        color: 'black',
+        marginTop: 5
+
     },
     miniRectangle9: {
         width: '50%',
@@ -206,7 +215,8 @@ const styles = StyleSheet.create({
     },
     number3: {
         fontSize: 25,
-        color: 'red'
+        color: 'red',
+        marginTop: 10
     },
     payments: {
         flexDirection: 'row',

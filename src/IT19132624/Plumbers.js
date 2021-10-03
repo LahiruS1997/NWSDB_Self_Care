@@ -6,12 +6,16 @@ import {
     SafeAreaView,
     TextInput,
     Button,
-    ScrollView
+    ScrollView,
+    Image,
+    Divider,
+    ImageBackground
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import Line from './Line'
 
 
 function BillCalculator({navigation}) {
@@ -23,10 +27,13 @@ function BillCalculator({navigation}) {
     return (
         <SafeAreaView>
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
+
                 <View style={styles.circleShape}/>
                 <Text style={styles.editProfileText}>Plumbers</Text>
 
                 <View style={{flex: 1, alignItems: 'center', marginTop: 120}}>
+
+                    
 
                     <View style={styles.rectangle}>
                         <Text style={styles.firstText}>The Objective of this feature is to assist general public to get the service of qualified plumbers based on their proximity. This contains the details of plumbers who trained by the National Water Supply and Board.</Text>
@@ -34,7 +41,12 @@ function BillCalculator({navigation}) {
 
                     <ScrollView>
                     <View style={styles.dataRectangle1}>
-                    <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{ marginTop:2,height:60, borderRadius: 25}}>
+                    <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{width: 370,
+                        height: 60, 
+                        marginLeft:0,
+                        marginTop: 0,
+                        borderRadius: 25,}}>
+
                         <FontAwesome5 name="search" size={35} color="black"  style={{marginTop:10, marginLeft: 30}}/>
                         <Text style={{marginTop: -35, marginLeft: 120, fontSize: 30}}>Search</Text>
                         <AntDesign name="closecircleo" size={30} color="black" style={{marginTop: -35, marginLeft: 320 }} />
@@ -42,42 +54,73 @@ function BillCalculator({navigation}) {
 
                     </LinearGradient>
                     </View>
+                    {/* <ImageBackground source={require('../../assets/11.jpeg')} style={{width: '100%', height: '100%'}} >
+                        
+                    </ImageBackground> */}
+                                
                     <View style={styles.dataRectangle2}> 
-                            <View style={styles.calculation}>
-                                <MaterialCommunityIcons name="face-profile" size={100} color="black" style={{marginTop:20}}/>
-                                <Text style={styles.charge1}>Usage Charge</Text>
+                    
+                                
+                            <View style={styles.databox}>
+                                <Image 
+                                    style={{width:100, height:100, borderRadius:25, marginTop:10, marginLeft:10}}
+                                    source ={{uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80'}}
+                                 />  
+                                <Text style={styles.charge1}></Text>
+
                                 <AntDesign name="rightcircleo" size={24} color="black" style={styles.charge2} />
                             </View> 
-                            <View style={styles.detailsList}> 
+
+                            <View style={styles.detailsList}>
                                 <Text style={styles.details}>W.P.C. Sdakalum</Text>
                                 <Text style={styles.details}>Colombo 10</Text>
                                 <Text style={styles.details}>5 Years Experince</Text>
-                                <Text style={styles.details}>07759831648</Text> 
+                                <Text style={styles.details}>07759831648</Text>
+                            </View>
+                            
+                            <Line />
+
+                            <View style={styles.databox}>
+                                <Image 
+                                    style={{width:100, height:100, borderRadius:25, marginTop:10, marginLeft:10}}
+                                     
+                                    source ={{uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80'}}
+                                /> 
+                                <Text style={styles.charge1}></Text>
+
+                                <AntDesign name="rightcircleo" size={24} color="black" style={styles.charge2} />
+
                             </View>
 
-                            <View style={styles.calculation}>
-                                <MaterialCommunityIcons name="face-profile" size={100} color="black" />
-                                <Text style={styles.charge1}>Usage Charge</Text>
-                                <AntDesign name="rightcircleo" size={24} color="black" style={styles.charge2} />
-                            </View> 
-                            <View style={styles.detailsList}> 
+                            <View style={styles.detailsList}>
                                 <Text style={styles.details}>W.P.C. Sdakalum</Text>
                                 <Text style={styles.details}>Colombo 10</Text>
                                 <Text style={styles.details}>5 Years Experince</Text>
-                                <Text style={styles.details}>07759831648</Text> 
-                            </View>
+                                <Text style={styles.details}>07759831648</Text>
+                            </View> 
+                            
+                            <Line /> 
 
-                            <View style={styles.calculation}>
-                                <MaterialCommunityIcons name="face-profile" size={100} color="black" />
-                                <Text style={styles.charge1}>Usage Charge</Text>
+                            <View style={styles.databox}>
+                                <Image 
+                                    style={{width:100, height:100, borderRadius:25, marginTop:10, marginLeft:10}}
+                                    source ={{uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80'}}
+                                /> 
+                                <Text style={styles.charge1}></Text>
+                              
+
                                 <AntDesign name="rightcircleo" size={24} color="black" style={styles.charge2} />
+
                             </View> 
-                            <View style={styles.detailsList}> 
+
+                            <View style={styles.detailsList}>
                                 <Text style={styles.details}>W.P.C. Sdakalum</Text>
                                 <Text style={styles.details}>Colombo 10</Text>
                                 <Text style={styles.details}>5 Years Experince</Text>
-                                <Text style={styles.details}>07759831648</Text> 
+                                <Text style={styles.details}>07759831648</Text>
+                                 
                             </View>
+ 
                             
                     </View>
                      
@@ -102,6 +145,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column-reverse',
         marginLeft: -340,
         marginTop: 100
+    },
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'cover'
     },
     editProfileText: {
         marginTop: -796,
@@ -209,21 +258,29 @@ const styles = StyleSheet.create({
         fontSize: 54,
         width: '30%',
         color: 'black',
-        marginTop: 50,
-        marginLeft: 30,
+        marginTop: 35,
+        marginLeft: 15,
          
     },
     details: {
         fontSize: 20,
-        marginLeft: 100,
+        marginLeft: 120,
         marginTop: 0,
          
     },
     detailsList: {
         fontSize: 20,
         marginLeft: 10,
-        marginTop: -60
+        marginTop: -110,
+        marginBottom: 20
     },
+    databox: {
+         height: 120,
+         backgroundColor: 'white',
+         flexDirection:'row',
+        borderRadius: 25,
+
+    }
      
      
     

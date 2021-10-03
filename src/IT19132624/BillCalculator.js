@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         borderRadius: 15,
         backgroundColor: 'white',
-        marginLeft: 30
+        marginLeft: 20
     },
     todoInput2: {
         height: 40,
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         borderRadius: 15,
         backgroundColor: 'white',
-        marginLeft: 30
+        marginLeft: 20
     },
     todoInput3: {
         height: 40,
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         borderRadius: 15,
         backgroundColor: 'white',
-        marginLeft: 30
+        marginLeft: 20
     },
     buttonsgrid: {
         flexDirection:'row',
@@ -223,9 +223,9 @@ const styles = StyleSheet.create({
     buttonCalc: {
         backgroundColor: '#fff',
         width: 325,
-        marginLeft: 30,
+        marginLeft: 20,
         marginTop: 25,
-
+        borderRadius: 25, 
     },
     billTitle: {
         fontSize: 35,

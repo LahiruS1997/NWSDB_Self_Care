@@ -9,6 +9,7 @@ import {
     ScrollView
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
+import Line from './Line'
 
 function PaymentsHistory({navigation}) {
     const [StartDate, setStartDate] = useState('')
@@ -51,6 +52,7 @@ function PaymentsHistory({navigation}) {
                                 
                             </View>
                         </View>
+                        <Line /> 
                         <View style={styles.payments}>
                             <View style={styles.miniRectangle7}>
                                 
@@ -58,13 +60,13 @@ function PaymentsHistory({navigation}) {
                                 <Text style={styles.number2}>2021-07-12</Text>
                                 
                             </View>
-                            <View style={styles.miniRectangle8}>
 
-                                                              
-                                <Text style={styles.number1}>1000.00LKR</Text>
-                                
+                            <View style={styles.miniRectangle8}>  
+                                <Text style={styles.number1}>1000.00LKR</Text> 
                             </View>
+
                         </View>
+                        <Line />
                         <View style={styles.payments}>
                             <View style={styles.miniRectangle7}>
                                 
@@ -79,8 +81,23 @@ function PaymentsHistory({navigation}) {
                                 
                             </View>
                         </View>
-                        
-                        
+                        <Line />
+
+                        <View style={styles.payments}>
+                            <View style={styles.miniRectangle7}>
+                                
+                                <Text style={styles.number2}>August 2021</Text>
+                                <Text style={styles.number2}>2021-06-02</Text>
+                                
+                            </View>
+                            <View style={styles.miniRectangle8}>
+
+                                 
+                                <Text style={styles.number1}>1000.00LKR</Text>
+                                
+                            </View>
+                        </View>
+                        <Line /> 
                     </View>
                     </ScrollView>
  
@@ -152,7 +169,7 @@ const styles = StyleSheet.create({
     },
     dataRectangle: {
         width: 370,
-        height: 450,
+        height: 500,
         backgroundColor: 'white',
         marginLeft:20,
         marginTop: 20,
@@ -165,19 +182,20 @@ const styles = StyleSheet.create({
     },
     miniRectangle7: {
         width: '50%',
-        height: 128,
+        height: 80,
         backgroundColor: 'white',
-        marginTop: 20,     
+        marginTop: 10,     
         opacity:6,
         marginLeft:20,
     },
     number1: {
         fontSize: 25,
-        color: 'green'
+        color: 'green',
+        marginTop: 20,
     },
     miniRectangle8: {
         width: '50%',
-        height: 128,
+        height: 90,
         backgroundColor: 'white',
         marginTop: 20,     
         opacity:6,
@@ -186,7 +204,9 @@ const styles = StyleSheet.create({
     },
     number2: {
         fontSize: 25,
-        color: 'black'
+        color: 'black',
+        marginTop: 10,     
+
     },
     miniRectangle9: {
         width: '50%',
