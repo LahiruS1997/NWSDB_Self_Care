@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         borderRadius: 15,
         backgroundColor: 'white',
-        marginLeft: 20
+        marginLeft: 21
     },
     todoInput2: {
         height: 40,
@@ -195,11 +195,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: '40%',
         marginTop: 25,
-        paddingLeft: 10,
+        paddingLeft: 15,
         marginRight: 10,
         borderRadius: 15,
         backgroundColor: 'white',
-        marginLeft: 20
+        marginLeft: 26
     },
     todoInput3: {
         height: 40,

@@ -121,6 +121,7 @@ function BillCalculator({navigation}) {
                                  
                             </View>
  
+                            <Line /> 
                             
                     </View>
                      
