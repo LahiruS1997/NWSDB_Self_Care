@@ -69,7 +69,7 @@ export default function Register({navigation}){
         })
         .then(res => res.json(),
             Alert.alert("Successfully Registered.!"),
-            navigation.navigate("Login")
+            navigation.navigate("Profile")
         )
     };  
 
@@ -83,7 +83,7 @@ export default function Register({navigation}){
                 <View style={styles.circleShape}/>
                 <Text style={styles.firstText}>Sign Up</Text>
                 
-                <View style={{flex: 1, alignItems: 'center', marginTop: 70}}>
+                <View style={{flex: 1, alignItems: 'center', marginTop: 90}}>
                     <TextInput 
                         style={styles.todoInput}
                         value={fullname}
@@ -123,7 +123,7 @@ export default function Register({navigation}){
                     />
 
                     <View style={styles.signUpButton}>
-                        <Button title="Sign Up" onPress={() => onRegister()} />
+                        <Button color="white" title="Sign Up" onPress={() => checkTextInput()} />
                     </View>
                 </View>
 
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         marginTop: -766,
         marginLeft: 20,
         fontSize: 35,
-        color: '#01239C'
+        color: '#01239C',
     },
     todoInput: {
         height: 40,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     signUpButton: {
-        marginTop: 70,
+        marginTop: 110,
         backgroundColor: '#022BFF',
         width: '50%',
         borderRadius: 20,

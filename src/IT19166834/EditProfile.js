@@ -55,10 +55,10 @@ function EditProfile({navigation}) {
                     />
 
                     <View style={styles.buttonSave}>
-                        <Button title="SAVE" onPress = {() => navigation.navigate('Profile')}></Button>
+                        <Button color= 'white' title="SAVE" onPress = {() => navigation.navigate('Profile')}></Button>
                     </View>
                     <View style={styles.buttonCancel}>
-                        <Button title="Cancel" onPress = {() => navigation.navigate('Profile')}></Button>
+                        <Button color= 'white' title="Cancel" onPress = {() => navigation.navigate('Profile')}></Button>
                     </View>
 
                 </View>

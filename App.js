@@ -6,6 +6,7 @@ import RegisterComponent from './src/IT19166834/Register';
 import ProfileComponent from './src/IT19166834/Profile';
 import EditProfile from './src/IT19166834/EditProfile';
 import EditPasswordComponent from './src/IT19166834/EditPassword';
+import UpdateProfilePicture from './src/IT19166834/UpdateProfilePicture';
 
 //import * as firebase from 'firebase';
 import * as firebase from 'firebase'
@@ -28,6 +29,7 @@ function App() {
           <Stack.Screen name="Profile" component={ProfileComponent} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
           <Stack.Screen name="EditPassword" component={EditPasswordComponent} />
+          <Stack.Screen name="UpdateProfilePicture" component={UpdateProfilePicture} />
         </Stack.Navigator>
       </NavigationContainer>
   );

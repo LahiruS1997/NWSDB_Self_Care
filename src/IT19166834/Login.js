@@ -42,34 +42,39 @@ export default function Login({navigation}){
         <SafeAreaView >
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
             <View style={styles.cover}>
-            <View style={styles.circleShape}/>
-            <Text style={styles.firstText}>Sign In</Text>
+                <View style={styles.circleShape}/>
+                <Text style={styles.firstText}>Sign In</Text>
 
-            <View style={{flex: 1, alignItems: 'center', marginTop: 140}}>
-                <TextInput 
-                    style={styles.todoInput}
-                    value={email}
-                    placeholder= 'Email'
-                    onChangeText={text => setEmail(text)}
-                    //onChangeText={text => onChangeInput}
-                />
-                <TextInput 
-                    style={styles.todoInput}
-                    value={password}
-                    placeholder= 'Password'
-                    //onChangeText={text => setPassword(text)}
-                    onChange={onChangeInput}
-                />
-            </View>
+                <View style={{flex: 1, alignItems: 'center', marginTop: 140}}>
+                    <TextInput 
+                        style={styles.todoInput}
+                        value={email}
+                        placeholder= 'Email'
+                        onChangeText={text => setEmail(text)}
+                        //onChangeText={text => onChangeInput}
+                    />
+                    <TextInput 
+                        style={styles.todoInput}
+                        value={password}
+                        placeholder= 'Password'
+                        //onChangeText={text => setPassword(text)}
+                        onChange={onChangeInput}
+                    />
+                </View>
 
-            <View style={styles.signInButton}>
-                <Button title="Sign in" onPress = {() => navigation.navigate('Register')} />
-                {/*<Button title="Sign in" />*/}
-            </View>
+                <View style={styles.signInButton}>
+                    <Button color='white' title="Sign in" onPress = {() => navigation.navigate('Profile')} />
+                    {/*<Button title="Sign in" />*/}
+                </View>
 
-            <View style={styles.signUpText}>
-                <Text style={{fontSize: 20}}>Don't Have an Account? Sign Up</Text>
-            </View>
+                <View style={styles.signUpText}>
+                    <Text style={{fontSize: 20}}>Don't Have an Account ?</Text>
+                </View>
+
+                <View style={styles.signUpButton}>
+                    <Button title="Sign Up" onPress = {() => navigation.navigate('Register')} />
+                </View>
+                
             </View>
             </LinearGradient>
 
@@ -109,10 +114,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#022BFF',
         width: '50%',
         borderRadius: 20,
-        marginLeft: '25%',
+        marginLeft: "auto",
+        marginRight: "auto",
     },
     signUpText: {
-        marginTop: 40,
-        marginLeft: 55
+        width: 218,
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: 40
     },
+    signUpButton: {
+        marginTop: 40
+    }
 })
