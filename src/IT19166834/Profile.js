@@ -6,7 +6,8 @@ import {
     TextInput,
     Button,
     SafeAreaView,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 
@@ -19,7 +20,10 @@ function Profile({navigation}) {
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
                 <View style={styles.rectangleCover} />
                 <View>
-                    <Image style={styles.imageProfile} source={require('../../assets/profile/profile_icon.png')} />
+                    {/*<Image style={styles.imageProfile} source={require('../../assets/profile/profile_icon.png')} />*/}
+                    <TouchableOpacity onPress = {() => navigation.navigate('UpdateProfilePicture')}>
+                        <Image style={styles.imageProfile} source={require('../../assets/profile/profile_icon.png')} />
+                    </TouchableOpacity>
                 </View>
                 <Text style={styles.usernameText}>Username</Text>
 
@@ -44,13 +48,13 @@ function Profile({navigation}) {
                     />
 
                     <View style={styles.buttonEditProfile}>
-                        <Button title="Edit Profile" onPress = {() => navigation.navigate('EditProfile')}></Button>
+                        <Button color="white" title="Edit Profile" onPress = {() => navigation.navigate('EditProfile')}></Button>
                     </View>
                     <View style={styles.buttonEditPassword}>
-                        <Button title="Edit Password" onPress = {() => navigation.navigate('EditPassword')}></Button>
+                        <Button color="white" title="Edit Password" onPress = {() => navigation.navigate('EditPassword')}></Button>
                     </View>
                     <View style={styles.buttonRemoveAccount}>
-                        <Button title="Remove Account"></Button>
+                        <Button color="white" title="Remove Account"></Button>
                     </View>
                 </View>
             </LinearGradient>
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     usernameText: {
         fontSize: 25,
         marginTop: -120,
-        marginLeft: 140
+        marginLeft: 140,
     },
     todoInput: {
         height: 40,
@@ -96,22 +100,29 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
     buttonEditProfile: {
-        marginTop: 90,
+        marginTop: 120,
         backgroundColor: '#022BFF',
-        width: '80%',
+        width: '37%',
         borderRadius: 20,
+        marginLeft: -165
     },
     buttonEditPassword: {
         backgroundColor: '#022BFF',
-        width: '80%',
+        width: '37%',
         borderRadius: 20,
-        marginTop: 10
+        marginTop: 10,
+        marginLeft: 165,
+        marginTop: -37
     },
     buttonRemoveAccount: {
         backgroundColor: '#022BFF',
         width: '80%',
         borderRadius: 20,
-        marginTop: 10
+        marginTop: 10,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 10 },
+        shadowRadius: 10,
+        shadowOpacity: 0.35,
     },
     imageProfile: {
         width: 100,
