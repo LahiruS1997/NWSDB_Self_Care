@@ -20,16 +20,16 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
+          {/* <Stack.Screen 
           name="Login"
           component={Login}
           options={{title: 'Login'}}
-          />
+          /> */}
           <Stack.Screen
             name="BillHistory"
             component={BillHistory}
+            
           />
-          <Stack.Screen name="Register" component={RegisterComponent} />
           
           <Stack.Screen name="PaymentsHistory" component={PaymentsHistory} />
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
