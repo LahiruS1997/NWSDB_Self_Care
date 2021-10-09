@@ -54,7 +54,7 @@ function Profile({navigation}) {
                         <Button color="white" title="Edit Password" onPress = {() => navigation.navigate('EditPassword')}></Button>
                     </View>
                     <View style={styles.buttonRemoveAccount}>
-                        <Button color="white" title="Remove Account"></Button>
+                        <Button color="white" title="Remove Account" onPress = {() => navigation.navigate('Login')}></Button>
                     </View>
                 </View>
             </LinearGradient>
