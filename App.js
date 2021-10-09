@@ -23,7 +23,7 @@ function App() {
           <Stack.Screen 
             name="BillHistory"
             component={BillHistory}
-            // options={{title: 'Login'}}
+            {/*// options={{title: 'Login'}}*/}
           />
           <Stack.Screen name="PaymentsHistory" component={PaymentsHistory} />
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
