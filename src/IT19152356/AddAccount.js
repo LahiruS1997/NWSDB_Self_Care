@@ -5,15 +5,43 @@ import {
     Button, 
     StyleSheet,
     TextInput,
-    SafeAreaView
+    SafeAreaView,
+    Alert
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
+//changed accounts to add account
+//export default function Accounts({navigation}){
+export default function AddAccount({navigation}){
+    const[accNo, SetAccNo] = useState("")
+    const[name, SetAccName] = useState("")
+    const[modal, setModal] = useState(false)
 
-export default function Accounts({navigation}){
-    
+    const submitData = () =>{
+       
+        fetch("http://localhost:4000/send-acc",{
+            method:"post",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                accNo,
+                name
+              
+            })
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            Alert.alert(`${data.accNo} is saved`)
+            navigation.navigate('Accounts')
+        })
+        .catch(err=>{
+            Alert.alert("something went wrong while sending ")
+        })
+    }
+
 
     return(
         <SafeAreaView >
@@ -29,22 +57,48 @@ export default function Accounts({navigation}){
             </View>
             <LinearGradient colors={['rgba(161, 196, 253, 1)', 'rgba(194, 233, 251, 1)']} style={styles.rectangleAddAcc}>
          
-                <TextInput 
-                            style={styles.inputAccName}
+                {/* <TextInput 
+                           style={styles.inputAccName}
                            placeholder= 'Ex. Home, Office'
-                />
+                           value={name}
+                           onChange={text => SetAccName(text)}
+                /> */}
+
+                
+                    <TextInput
+                        style={styles.inputAccName}
+                        label='Name'
+                        value={name}
+                        clearButtonMode='always'
+                        mode="outlined"
+                        onChangeText={text => SetAccName(text)}
+                        />
                 <Text style={styles.marginAccName}>Name for Account</Text>
                 <Text style={styles.marginAccNo}>Account Number</Text>
-
+{/* 
                 <TextInput 
-                            style={styles.inputAccNo}
-                           placeholder= 'Ex. 20 / 06 / 23 / 34'
-                />
+                           style={styles.inputAccNo}
+                           label= 'Ex. 20 / 06 / 23 / 34'
+                           value={accNo}
+                           onChange={text => SetAccNo(text)}
+                /> */}
+
+                <TextInput
+                        style={styles.inputAccNo}
+                        label='AccNo'
+                        value={accNo}
+                        mode="outlined"
+                        onChangeText={text => SetAccNo(text)}
+                        />
 
                 <LinearGradient colors={['rgba(224, 195, 252, 1)', 'rgba(142, 197, 252, 1)']} style={styles.submitRectangle}>
             
-                    <Text style={styles.accSubmit}>Submit</Text>
-                    <Ionicons style={styles.submitIcon} name="checkmark-done-circle" size={25} color="black" />
+                    <Text style={styles.accSubmit} onPress={()=>submitData()}>Submit</Text>
+                    
+                    {/* <Button onPress = {() => navigation.navigate('Accounts')}   onPress={() => submitData()}>
+                        Save
+                    </Button> */}
+                    <Ionicons style={styles.submitIcon} name="checkmark-done-circle" size={25} color="black" onPress={()=>{submitData(); navigation.navigate('Home'); }} />
                     </LinearGradient>
 
                 <LinearGradient colors={['rgba(224, 195, 252, 1)', 'rgba(142, 197, 252, 1)']} style={styles.dissmissRectangle}>

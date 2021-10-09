@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     View, 
     Text, 
@@ -6,40 +6,79 @@ import {
     StyleSheet,
     TextInput,
     SafeAreaView,
-    Pressable
+    Pressable,
+    FlatList,
+    Alert
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
 export default function Accounts({navigation}){
+
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const fetchData = ()=>{
+        fetch("http://localhost:4000/getAccounts")
+        .then(res=>res.json())
+        .then(results=>{
+            setData(results)
+            setLoading(false)
+        }).catch(err=>{
+            Alert.alert("Something went wrong")
+        })
+
+    }
+
+    useEffect(()=>{
+        fetchData()
+    },[])
     
 
+  
+    
+    const renderList = ((item) =>{
+        console.log(item._id)
+        const deleteAcc = ()=>{
+        
+            fetch("http://localhost:4000/deleteAcc",{
+                method:"post",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify({
+                   id:item._id 
+                  
+                })
+             
+            })
+                .then(res=>res.json())
+                .then(deletedAcc =>{
+                    Alert.alert(`${deletedAcc.name} deleted`)
+            
+            
+                }).catch(err=>{
+                    Alert.alert("something went wrong")
+            })
+        }
     return(
-        <SafeAreaView >
-            <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
-            <View style={styles.cover}>
-            <View style={styles.circleShape}/>
-            <Text style={styles.firstText}>Manage Accounts</Text>
-
-           
-
-           
-           
-            </View>
+        // <SafeAreaView >
+        
 
             <LinearGradient colors={['rgba(161, 196, 253, 1)', 'rgba(194, 233, 251, 1)']} style={styles.rectangleAccount}>
             
             <Entypo style={styles.marginIcon} name="home" size={32} color="black" />
-                <Text style={styles.marginAccName}>40 / 07 / 15 / 12</Text>
-                <Text style={styles.marginPlace}>Home</Text>
+                <Text style={styles.marginAccName}>{item.accNo}</Text>
+                <Text style={styles.marginPlace}>{item.name}</Text>
                 <LinearGradient colors={['rgba(224, 195, 252, 1)', 'rgba(142, 197, 252, 1)']} style={styles.payAcc}>
-                <Pressable title="E D I T" onPress = {() => navigation.navigate('EditAccount')}>
+                {/* <Pressable title="E D I T" onPress = {() => navigation.navigate('EditAccount')}> */}
+                <Pressable title="E D I T" onPress = {() => {navigation.navigate('EditAccount',{item})}}>
                 <Text style={styles.btnAtxt}>EDIT</Text>
                 </Pressable>
                 </LinearGradient>  
                
-                <AntDesign style={styles.closeBtn} name="closecircle" size={24} color="black" />
+                <AntDesign style={styles.closeBtn} name="closecircle" size={24} color="black" onPress={()=>deleteAcc()} />
                 <View>
                 <LinearGradient colors={['rgba(161, 196, 253, 1)', 'rgba(194, 233, 251, 1)']} style={styles.accAmount}>
                     <Text >LKR. 1300. 00</Text>
@@ -47,48 +86,42 @@ export default function Accounts({navigation}){
                 </View>
                 </LinearGradient>
 
-                <LinearGradient colors={['rgba(161, 196, 253, 1)', 'rgba(194, 233, 251, 1)']} style={styles.rectangleAccount2}>
-                
-                <Entypo style={styles.marginIcon} name="home" size={32} color="black" />
-                <Text style={styles.marginAccName}>40 / 07 / 15 / 32</Text>
-                <Text style={styles.marginPlace}>Office</Text>
-                
-                
-                
-                <LinearGradient colors={['rgba(224, 195, 252, 1)', 'rgba(142, 197, 252, 1)']} style={styles.payAcc}>
-                <Pressable title="E D I T" onPress = {() => navigation.navigate('EditAccount')}>
-                <Text style={styles.btnAtxt}>EDIT</Text>
-                </Pressable>
-                </LinearGradient>  
 
+        // </SafeAreaView>
+    
+    )
+    //added below one newly
+    })
 
-                
+    return(
+        <View>
+         <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
+            <View style={styles.cover}>
+            <View style={styles.circleShape}/>
+            <Text style={styles.firstText}>Manage Accounts</Text>   
 
-
-                
-             
+            <FlatList 
+                data = {data}
+                renderItem={({item}) =>{
+                   return renderList(item)
+                }}
+                keyExtractor={item =>`${item._id}`}
+                onRefresh={()=>fetchData()}
+                refreshing={loading}
                
-                <AntDesign style={styles.closeBtn} name="closecircle" size={24} color="black" />
-                <LinearGradient colors={['rgba(161, 196, 253, 1)', 'rgba(194, 233, 251, 1)']} style={styles.accAmount}>
-                    <Text >LKR. 750. 00</Text>
-                </LinearGradient>
 
-                
-                
-                </LinearGradient>
-               
-                
-                <View style={styles.addACCBtn}>
+            />
+                   <View style={styles.addACCBtn}>
                 <LinearGradient colors={['rgba(224, 195, 252, 1)', 'rgba(142, 197, 252, 1)']} style={styles.btnA}>
                     <Pressable   borderRadius="24" title="ADD ACCOUNT" onPress = {() => navigation.navigate('AddAccount')}>
                         <Text style={styles.btnAtxt}>ADD ACCOUNT</Text>
                     </Pressable>
                     </LinearGradient>  
                 </View>
-
-            </LinearGradient>
-
-        </SafeAreaView>
+                </View>
+                </LinearGradient>
+           
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -110,7 +143,8 @@ const styles = StyleSheet.create({
     },
 
     rectangleAccount: {
-        marginTop:-45,
+        marginTop:15,
+        marginBottom:10,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         borderRadius: 29,
         height: 138,

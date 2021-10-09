@@ -12,8 +12,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
-export default function Accounts({navigation}){
-    
+export default function EditAccount({navigation}){
+    // console.log(item)
 
     return(
         <SafeAreaView >
