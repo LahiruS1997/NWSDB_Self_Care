@@ -211,18 +211,18 @@ const styles = StyleSheet.create({
     userIcon: {
         marginTop: -540,
         marginRight: -200,
-        marginLeft:360
+        marginLeft:260
     },
 
     bellIcon: {
         marginTop: -28,
         marginRight: 250,
-        marginLeft:402
+        marginLeft:302
     },
     exitIcon:{
         marginTop: -30,
         marginRight: 250,
-        marginLeft:442
+        marginLeft:342
     },
     homeText:{
         marginTop: 10,
@@ -236,10 +236,10 @@ const styles = StyleSheet.create({
   
     wrap: {
         // width: Dimensions.get('window').width,
-        width: 420,
+        width: 340,
         // height: Dimensions.get('window').height * 0.30,
         height: 160,
-        marginLeft:14,
+        marginLeft:8,
         marginTop:10,
         shadowColor: 'black',
         borderRadius: 25,
@@ -260,11 +260,11 @@ const styles = StyleSheet.create({
         color:'#888'
     },
     rectangle: {
-        width: 408,
+        width: 348,
         height: 108,
         backgroundColor: 'rgba(69, 135, 244, 1)',
         alignItems:'center',
-        marginLeft:43,
+        marginLeft:13,
         marginTop: -290,
         borderRadius: 25,
        
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
         height: 278,
         // backgroundColor: 'rgba(69, 135, 244, 1)',
         alignItems:'center',
-        marginLeft:43,
+        marginLeft:8,
         marginTop: 5,
         borderRadius: 25,
         flexDirection: 'row',
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:66,
+        marginLeft:37,
         marginTop: -5,
         borderRadius: 25,
         opacity:6,
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:66,
+        marginLeft:37,
         marginTop: -5,
         borderRadius: 25,
         opacity:6,
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:67,
+        marginLeft:37,
         marginTop: -15,
         borderRadius: 25,
         opacity:6,
@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:67,
+        marginLeft:37,
         marginTop: -15,
         borderRadius: 25,
         opacity:6,
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:67,
+        marginLeft:37,
         marginTop: -26,
         borderRadius: 25,
         opacity:6,
@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:67,
+        marginLeft:37,
         marginTop: -26,
         borderRadius: 25,
         opacity:6,
