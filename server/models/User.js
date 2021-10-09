@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    accounts:{
+        type:Array,
+        default: []
+    }
 }, {
     timestamps: true
 })
