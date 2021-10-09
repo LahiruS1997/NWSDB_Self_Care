@@ -18,17 +18,16 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
 
-        <Stack.Screen 
-            name="Login"
+        <Stack.Screen name="Login"
             component={Login}
             options={{title: 'Login'}}
           />
      
-    <Stack.Screen 
-            name="Home"
-            component={Home}
-            options={{title: 'NSWSD SelfCare'}}
-          />
+        <Stack.Screen 
+                name="Home"
+                component={Home}
+                options={{title: 'NSWSD SelfCare'}}
+              />
             <Stack.Screen name="AddAccount" component={AddAccount} />
             <Stack.Screen name="Accounts" component={Accounts} />
             <Stack.Screen name="EditAccount" component={EditAccount} />
