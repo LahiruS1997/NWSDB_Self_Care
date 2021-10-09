@@ -11,6 +11,7 @@ import PaymentsHistory from './src/IT19132624/PaymentsHistory';
 import BillCalculator from './src/IT19132624/BillCalculator';
 import Plumbers from './src/IT19132624/Plumbers';
 import AreYouaPlumber from './src/IT19132624/AreYouaPlumber'
+import CreatePlumber from './src/IT19132624/CreateAreYouaPlumber'
 
 
 const Stack = createNativeStackNavigator();
@@ -19,7 +20,7 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen 
+          <Stack.Screen 
             name="BillHistory"
             component={BillHistory}
             // options={{title: 'Login'}}
@@ -28,16 +29,12 @@ function App() {
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
           <Stack.Screen name="Plumbers" component={Plumbers} />
           <Stack.Screen name="AreYoua" component={AreYouaPlumber} />
-          
-          <Stack.Screen 
-            name="Login"
-            component={Login}
-             
-          />
+          <Stack.Screen name="CreatePlumber" component={CreatePlumber} />
+           
           <Stack.Screen name="Register" component={RegisterComponent}/>
           <Stack.Screen name="Profile" component={ProfileComponent} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
-          <Stack.Screen name="EditPassword" component={EditPasswordComponent} /> */}
+          <Stack.Screen name="EditPassword" component={EditPasswordComponent} />
 
           
         </Stack.Navigator>
