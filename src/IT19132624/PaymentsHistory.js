@@ -35,7 +35,7 @@ function PaymentsHistory({navigation}) {
                                 <Button title="Billing" onPress = {() => navigation.navigate('BillHistory')}></Button>
                             </View>
                             <View style={styles.buttonCancel}>
-                                <Button title="Payments" onPress = {() => navigation.navigate('PaymentsHistory')}></Button>
+                                <Button title="Payments" onPress = {() => navigation.navigate('AreYoua')}></Button>
                             </View> 
                         </View>
 

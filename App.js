@@ -10,6 +10,7 @@ import BillHistory from './src/IT19132624/BillHistory';
 import PaymentsHistory from './src/IT19132624/PaymentsHistory';
 import BillCalculator from './src/IT19132624/BillCalculator';
 import Plumbers from './src/IT19132624/Plumbers';
+import AreYouaPlumber from './src/IT19132624/AreYouaPlumber'
 
 
 const Stack = createNativeStackNavigator();
@@ -18,7 +19,7 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
+          {/* <Stack.Screen 
             name="BillHistory"
             component={BillHistory}
             // options={{title: 'Login'}}
@@ -26,6 +27,7 @@ function App() {
           <Stack.Screen name="PaymentsHistory" component={PaymentsHistory} />
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
           <Stack.Screen name="Plumbers" component={Plumbers} />
+          <Stack.Screen name="AreYoua" component={AreYouaPlumber} />
           
           <Stack.Screen 
             name="Login"
@@ -35,7 +37,7 @@ function App() {
           <Stack.Screen name="Register" component={RegisterComponent}/>
           <Stack.Screen name="Profile" component={ProfileComponent} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
-          <Stack.Screen name="EditPassword" component={EditPasswordComponent} />
+          <Stack.Screen name="EditPassword" component={EditPasswordComponent} /> */}
 
           
         </Stack.Navigator>
@@ -43,4 +45,4 @@ function App() {
   );
 };
 
-export default App;
+export default App
