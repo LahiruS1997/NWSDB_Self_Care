@@ -69,7 +69,7 @@ export default function Register({navigation}){
         })
         .then(res => res.json(),
             Alert.alert("Successfully Registered.!"),
-            navigation.navigate("Profile")
+            navigation.navigate("Home")
         )
     };  
 
