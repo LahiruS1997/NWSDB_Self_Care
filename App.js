@@ -21,10 +21,16 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen 
+          name="Login"
+          component={Login}
+          options={{title: 'Login'}}
+          />
+          <Stack.Screen
             name="BillHistory"
             component={BillHistory}
-            // options={{title: 'Login'}}
           />
+          <Stack.Screen name="Register" component={RegisterComponent} />
+          
           <Stack.Screen name="PaymentsHistory" component={PaymentsHistory} />
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
           <Stack.Screen name="Plumbers" component={Plumbers} />
