@@ -20,11 +20,7 @@ function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
-            name="Login"
-            component={Login}
-            options={{title: 'Login'}}
-          />
+          
           <Stack.Screen name="Register" component={RegisterComponent} />
           <Stack.Screen name="Profile" component={ProfileComponent} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
@@ -35,4 +31,4 @@ function App() {
   );
 };
 
-export default App;
+export default App
