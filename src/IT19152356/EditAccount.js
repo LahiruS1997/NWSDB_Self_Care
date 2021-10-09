@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(103, 155, 240, 1)',
         borderRadius: 29,
         height: 300,
-        width: 360,
-        marginLeft:60,
+        width: 338,
+        marginLeft:15,
         shadowColor: '#000',
         shadowOffset:{
             width:5,

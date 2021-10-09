@@ -148,8 +148,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(103, 155, 240, 1)',
         borderRadius: 29,
         height: 138,
-        width: 360,
-        marginLeft:60,
+        width: 340,
+        marginLeft:15,
         shadowColor: '#000',
         shadowOffset:{
             width:5,
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
 
     },
     closeBtn:{
-        marginLeft: 350,
+        marginLeft: 330,
         marginTop: -115
     },
     miniRectangle:{
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     accAmount:{
         marginTop: 10,
         fontSize:14,
-        marginLeft:250,
+        marginLeft:220,
         height:30,
         width:100,
         borderRadius:170,
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     addACCBtn: {
         marginTop:45,
         height: 290,
-        marginLeft:170,
+        marginLeft:100,
         width:160,
         borderRadius: 129,
         // backgroundColor:'#022BFF'
