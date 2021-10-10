@@ -109,19 +109,19 @@ export default function Home({navigation}){
              <View style={styles.buttonRectangle}>
              <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle}>
                            
-                <FontAwesome5 style={styles.marginfix} name="money-bill-alt" size={28} color="black"/>
+                <FontAwesome5 style={styles.marginfix} name="money-bill-alt" size={28} color="black" onPress = {() => navigation.navigate('BillHistory')} />
                 <Text>Bill Details</Text>
                 </LinearGradient>
 
                 <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle2}>
      
-                <Entypo style={styles.marginfix} name="calculator" size={28} color="black" />
+                <Entypo style={styles.marginfix} onPress = {() => navigation.navigate('BillCalculator')} name="calculator" size={28} color="black" />
                 <Text>Calculator</Text>
                 </LinearGradient>
 
                 <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle3}>
     
-                <MaterialIcons style={styles.marginfix} name="payment" size={28} color="black" />
+                <MaterialIcons style={styles.marginfix} onPress = {() => navigation.navigate('PaymentsHistory')}  name="payment" size={28} color="black" />
                 <Text>Payment</Text>
                 </LinearGradient>
 
@@ -149,19 +149,19 @@ export default function Home({navigation}){
 
                 <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle7}>
   
-                <Entypo style={styles.marginfix} name="mail" size={24} color="black" />
+                <Entypo style={styles.marginfix} name="mail" size={24} color="black"  onPress = {() => navigation.navigate('MessagingService')}  />
                 <Text>Contact Us</Text>
                 </LinearGradient>
 
                 <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle8}>
   
-                <FontAwesome style={styles.marginfix} name="users" size={24} color="black" />
+                <FontAwesome style={styles.marginfix} onPress = {() => navigation.navigate('Plumbers')}  name="users" size={24} color="black" />
                 <Text>Plumbers</Text>
                 </LinearGradient>
 
                 <LinearGradient colors={['rgba(69, 135, 244, 1)', 'rgba(194, 233, 251, 1)']} style={styles.miniRectangle9}>
               
-                <FontAwesome5 style={styles.marginfix} name="book-reader" size={24} color="black" />
+                <FontAwesome5 style={styles.marginfix} name="book-reader" size={24} color="black" onPress = {() => navigation.navigate('MeterReading1')} />
                 <Text>Meter Read</Text>
                 </LinearGradient>
 
