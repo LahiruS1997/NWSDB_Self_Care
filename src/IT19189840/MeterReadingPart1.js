@@ -26,16 +26,22 @@ const MeterReadingPart1 = ({navigation}) => {
             
             <View style={styles.halfcircleShape} />
             <Text style={styles.titlemsg}> Meter Reading</Text>
-            <Text style={styles.instruct1}>Due to the covid 19 situation if our officer unable to get meter reading in your area, upload your meter reading with photo of  meter reader</Text>
+            <Text style={styles.instruct1}>Due to the covid 19 situation if our officer unable to get meter reading in your area, upload your meter reading with photo of  meter reader.</Text>
             <Text style={styles.accountselectiontitle}>Choose your account </Text>
             <View style={styles.accountlist}>
-                <TouchableOpacity style={styles.tacclist}>
-                    <Text style={styles.accountitem}><MaterialIcons name="home" size={20} color="black"/>Home{"\n"}50/09/34/01</Text>
-                    <Text style={styles.accountitem}><MaterialIcons name="home" size={20} color="black"/>Office{"\n"}50/09/34/01</Text>
+                <TouchableOpacity style={styles.accountitem}>
+                    <Text>< MaterialIcons name="home" size={20} color="black"/>Home{"\n"}50/09/34/01</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.tacclist1}>
-                    <Text style={styles.accountitem}><MaterialIcons name="home" size={20} color="black"/>Shop{"\n"}50/09/34/01</Text>
-                    <Text style={styles.accountitem}><MaterialIcons name="home" size={20} color="black"/>Apartment{"\n"}50/09/34/01</Text>
+                <TouchableOpacity style={styles.accountitem}>
+                    <Text><MaterialIcons name="home" size={20} color="black"/>Office{"\n"}50/09/34/01</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.accountlist2}>
+                <TouchableOpacity style={styles.accountitem}>
+                    <Text>< MaterialIcons name="home" size={20} color="black"/>Home{"\n"}50/09/34/01</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.accountitem}>
+                    <Text><MaterialIcons name="home" size={20} color="black"/>Office{"\n"}50/09/34/01</Text>
                 </TouchableOpacity>
             </View>
       
@@ -52,17 +58,17 @@ const MeterReadingPart1 = ({navigation}) => {
 }
 const styles = StyleSheet.create({
     halfcircleShape: {
-        width: 360,
-        height: 360,
+        width: 410,
+        height: 410,
         backgroundColor: '#00a695',
-        borderRadius: 180,
+        borderRadius: 205,
         transform: [{scaleX: 1.0}],
-        top: -180,
+        top: -205,
         opacity: 0.3
     },
     titlemsg: {
-        marginTop: -310,
-        marginLeft: 37,
+        marginTop: -350,
+        marginLeft: 70,
         fontSize: 35,
         color: 'black',
         fontWeight: 'bold'
@@ -74,9 +80,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         marginBottom: 30,
-        marginLeft: 10,
+        marginLeft: 30,
         marginRight: 10,
-        textAlign: 'left'
+        textAlign: 'left',
+        fontWeight: 'bold',
+        borderColor:'black',
+        
+
 
     },
     accountselectiontitle: {
@@ -84,7 +94,7 @@ const styles = StyleSheet.create({
         color: 'black',
         textAlign: 'center',
         fontSize: 20,
-        marginBottom: 20
+        marginBottom: 40
 
     },
     numberregistertext: {
@@ -93,14 +103,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20
     },
-    tacclist:{
+    accountlist:{
+        marginTop: -25,
         flex: 1,
         fontSize: 15,
         color: 'black',
         justifyContent: 'space-around',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: 14
     },
-    tacclist1:{
+    accountlist2:{
+        top: 85,
         flex: 1,
         fontSize: 15,
         color: 'black',
@@ -108,14 +121,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     accountitem:{
+        top: 5,
+        height: 75,
         borderColor: '#fff',
         borderRadius: 20,
         borderWidth: 0.9,
-        paddingBottom: 20,
-        paddingLeft:12,
-        paddingRight: 12,
-        paddingTop: 12,
-        marginBottom: 20,
+        paddingBottom: 15,
+        paddingLeft:15,
+        paddingRight: 15,
+        paddingTop: 10,
         shadowColor: '#000',
         shadowOffset: {
           width: 0,
@@ -158,7 +172,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#04befe',
         flexDirection:'row',
         justifyContent: 'space-evenly',
-        marginTop: 70
+        marginTop: 200
         
         
     },

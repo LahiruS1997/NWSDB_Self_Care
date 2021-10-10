@@ -16,9 +16,20 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 export default function MeterReadingPart2({navigation}) {
     const [text, setText] = useState('')
-    const changeHandler = (val) =>{
-        setText(val)
-    }
+    const [meter, setMeter] = useState('')
+    const checkTextInput = () => {
+        if(!meter.trim()){
+            alert('Please Enter Meter Reading');
+            return;
+        }
+        
+            navigation.navigate("ImageUpload", {
+                meter: meter
+            })
+        
+       
+        
+    };
     return (
         <SafeAreaView>
             <LinearGradient colors={['rgba(95, 197, 255, 0.98)', 'rgba(255, 255, 255, 0.29)']} style={{height:753}}>
@@ -26,6 +37,10 @@ export default function MeterReadingPart2({navigation}) {
             
             <View style={styles.halfcircleShape} />
             <Text style={styles.instruct2}>Enter these black numbers only</Text>
+            <View style={styles.wrapper}>
+                <View style={styles.rectangle}/>
+                <View style={styles.triangle}/>
+            </View>
             <View style={styles.redrec} />
             <View>
                 <Image
@@ -38,10 +53,11 @@ export default function MeterReadingPart2({navigation}) {
                     <TextInput
                         style={styles.input}
                         placeholder="           Enter Meter Reading"
-                        onChangeText={changeHandler}
+                        onChangeText={text => setMeter(text)}
+                        keyboardType="numeric"
                     />
             </View>
-            <TouchableOpacity style={styles.uploadimgbtn}  color="blue" onPress = {() => navigation.navigate('SampleHome')}>
+            <TouchableOpacity style={styles.uploadimgbtn}  color="blue" onPress = {() => checkTextInput()}>
                 <Text>Upload Image</Text>
             </TouchableOpacity>
             </View>
@@ -52,28 +68,38 @@ export default function MeterReadingPart2({navigation}) {
 }
 const styles = StyleSheet.create({
     halfcircleShape: {
-        width: 360,
-        height: 360,
+        width: 410,
+        height: 410,
         backgroundColor: '#00a695',
-        borderRadius: 180,
+        borderRadius: 205,
         transform: [{scaleX: 1.0}],
-        top: -180,
+        top: -205,
         opacity: 0.3
     },
+    titlemsg: {
+        marginTop: -180,
+        marginLeft: 20,
+        fontSize: 35,
+        color: 'black',
+        fontWeight: 'bold'
+
+    },
     instruct2: {
-        marginTop: -310,
+        marginTop: -350,
         marginLeft: 20,
         fontSize: 25,
         color: 'black',
         fontWeight: 'bold',
-        marginBottom: 100
+        marginBottom: 70
 
     },
     imgcontainer:{
+        marginTop: 150,
         resizeMode: 'contain',
-        height: 200,
-        width: 300,
-        marginLeft: 20
+        height: 250,
+        width: 350,
+        marginLeft: 20,
+        marginBottom: 20
         
     },
     redrec2:{
@@ -82,8 +108,8 @@ const styles = StyleSheet.create({
         borderColor: 'red',
         borderWidth: 2,
         borderStyle: "solid",
-        marginLeft: 115,
-        marginTop: -150
+        marginLeft: 140,
+        marginTop: -190
     },
     accountselectiontitle: {
         marginTop: 120,
@@ -143,7 +169,7 @@ const styles = StyleSheet.create({
     registernum:{
         borderWidth: 2,
         width: 250,
-        marginLeft: 50,
+        marginLeft: 70,
         marginBottom: 40,
         marginTop: 120
     },
@@ -167,7 +193,49 @@ const styles = StyleSheet.create({
         backgroundColor: '#04befe'
         
     },
-    
+    wrapper: {
+        flex: 0.2,
+        alignItems:'center',
+        paddingLeft: 29,
+        paddingTop: 0,
+        marginRight:60,
+        marginTop: -60,
+        marginLeft: -100,
+        transform: [
+            { rotate: '345deg' }
+        ]
+
+
+    },
+    rectangle: {
+        width: 8,
+        backgroundColor: "red",
+        margin: 0,
+        height: 125,
+        borderColor:"black",
+        transform: [
+            { rotate: '0deg' }
+        ]
+
+    },
+    triangle: {
+        width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderLeftWidth: 17,
+        borderRightWidth: 17,
+        borderBottomWidth: 33,
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderBottomColor:"red",
+        transform: [
+            { rotate: '180deg' }
+        ],
+        margin: 0,
+        marginLeft: -6,
+        borderWidth: 0
+    },
     todoInput: {
         height: 40,
         borderColor: '#053BC5',
