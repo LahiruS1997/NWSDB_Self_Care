@@ -90,6 +90,23 @@ function BillHistory({navigation}) {
                             </View>  */}
                         </View>
                         <Line />
+                        <View style={styles.payments}>
+                            <View style={styles.miniRectangle7}>
+                                
+                                <Text style={styles.number2}>August 2021</Text>
+                                <Text style={styles.number2}>Units: 12</Text>
+                                <Text style={styles.number3}>Due:    -1440.17</Text>
+                                
+                            </View>
+                            
+
+                            <View style={styles.miniRectangle8}>
+                                
+                                <Text style={styles.number1}>457.00LKR</Text>
+                                
+                            </View>
+                        </View>
+                        <Line />
                         
                         
                     </View>
@@ -112,13 +129,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(236, 253, 255, 1)',
         transform: [{rotate: '-18.51deg'}, {scaleX: 1.03}],
         flexDirection: 'column-reverse',
-        marginLeft: -340,
+        marginLeft: -350,
         marginTop: 100
     },
     editProfileText: {
         marginTop: -796,
         marginLeft:  '35%',
-        fontSize: 35,
+        fontSize: 25,
         color: '#01239C'
     },
     todoInput: {
@@ -148,7 +165,7 @@ const styles = StyleSheet.create({
     firstText: {
         marginTop: 10,
         marginLeft: 20,
-        fontSize: 22,
+        fontSize: 18,
         color: '#fff'
     },
     rectangle: {
@@ -216,7 +233,8 @@ const styles = StyleSheet.create({
     number3: {
         fontSize: 25,
         color: 'red',
-        marginTop: 10
+        marginTop: 10,
+        marginBottom:20
     },
     payments: {
         flexDirection: 'row',

@@ -98,6 +98,21 @@ function PaymentsHistory({navigation}) {
                             </View>
                         </View>
                         <Line /> 
+                        <View style={styles.payments}>
+                            <View style={styles.miniRectangle7}>
+                                
+                                <Text style={styles.number2}>August 2021</Text>
+                                <Text style={styles.number2}>2021-06-02</Text>
+                                
+                            </View>
+                            <View style={styles.miniRectangle8}>
+
+                                 
+                                <Text style={styles.number1}>1000.00LKR</Text>
+                                
+                            </View>
+                        </View>
+                        <Line /> 
                     </View>
                     </ScrollView>
  
@@ -124,7 +139,7 @@ const styles = StyleSheet.create({
     editProfileText: {
         marginTop: -796,
         marginLeft:  '23%',
-        fontSize: 35,
+        fontSize: 25,
         color: '#01239C'
     },
     todoInput: {
@@ -154,7 +169,7 @@ const styles = StyleSheet.create({
     firstText: {
         marginTop: 10,
         marginLeft: 20,
-        fontSize: 22,
+        fontSize: 18,
         color: '#fff'
     },
     rectangle: {

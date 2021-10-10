@@ -48,7 +48,7 @@ function BillCalculator({navigation}) {
                         borderRadius: 25,}}>
 
                         <FontAwesome5 name="search" size={35} color="black"  style={{marginTop:10, marginLeft: 30}}/>
-                        <Text style={{marginTop: -35, marginLeft: 120, fontSize: 30}}>Search</Text>
+                        <Text style={{marginTop: -35, marginLeft: 120, fontSize: 25}}>Search</Text>
                         <AntDesign name="closecircleo" size={30} color="black" style={{marginTop: -35, marginLeft: 320 }} />
 
 
@@ -68,7 +68,7 @@ function BillCalculator({navigation}) {
                                  />  
                                 <Text style={styles.charge1}></Text>
 
-                                <AntDesign name="rightcircleo" size={24} color="black" style={styles.charge2} />
+                                <AntDesign name="rightcircleo" size={22} color="black" style={styles.charge2} />
                             </View> 
 
                             <View style={styles.detailsList}>
@@ -122,6 +122,7 @@ function BillCalculator({navigation}) {
                             </View>
  
                             <Line /> 
+                            <Button style={{martginTop: 10}} title="Are You a Plumber?" onPress = {() => navigation.navigate('AreYoua')}></Button>
                             
                     </View>
                      
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     editProfileText: {
         marginTop: -796,
         marginLeft:  '35%',
-        fontSize: 35,
+        fontSize: 25,
         color: '#01239C'
     },
     todoInput: {
@@ -172,7 +173,7 @@ const styles = StyleSheet.create({
     firstText: {
         marginTop: 10,
         marginLeft: 20,
-        fontSize: 22,
+        fontSize: 17,
         color: '#fff'
     }, 
     rectangle: {
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
         height: 150,
         backgroundColor: 'rgba(69, 135, 244, 1)',
         alignItems:'center',
-        marginLeft:20,
+        marginLeft:10,
         marginTop: -120,
         borderRadius: 25,
    
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
         width: 370,
         height: 60,
         backgroundColor: 'white',
-        marginLeft:20,
+        marginLeft:10,
         marginTop: 10,
         borderRadius: 25,
         
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
         width: 370,
         height: 400,
         backgroundColor: 'white',
-        marginLeft:20,
+        marginLeft:10,
         marginTop: 10,
         borderRadius: 25,
         
@@ -256,11 +257,11 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     charge2: {
-        fontSize: 54,
+        fontSize: 44,
         width: '30%',
         color: 'black',
         marginTop: 35,
-        marginLeft: 15,
+        marginLeft: 95,
          
     },
     details: {

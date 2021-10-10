@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 import { Text,
     View,
     StyleSheet,
@@ -7,27 +8,28 @@ import { Text,
     Button,
     Image,
     ScrollView,
-    FlatList } from 'react-native';
+    FlatList ,
+    ActivityIndicator } from 'react-native';
 
 import {Card, FAB} from 'react-native-paper'
 
 
 export default function AreYouaPlumber({navigation}) {
-    const data = [
-        {id:1, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:2, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:3, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:4, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:4, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:4, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:4, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-        {id:4, name:"sadakalum", experience: "5 Years", mobileNo: "0111556944"},
-    ]
+    const  [data, setData] = useState([])
+    const [loading, setLoading] =useState(true)
+
+    useEffect(() => {
+        fetch("http://localhost:3000/get-plumbers")
+        .then(res=>res.json())
+        .then(results=>{
+            setData(results)
+            setLoading(false)
+        })
+    }, [])
 
     const renderList = ((item) => {
             return (
-                <View>
-                    <Button title="CreatePlumber" onPress = {() => navigation.navigate('CreatePlumber')}></Button>
+                <View> 
 
                     <Card style={styles.mycard} >
                         <View style={styles.cardView}>
@@ -37,10 +39,10 @@ export default function AreYouaPlumber({navigation}) {
                             /> 
 
                             <View style={{marginLeft: 10}}>
-                                <Text style={styles.text}>{item.name}</Text>
-                                <Text style={styles.text}>{item.id}</Text>
+                                <Text  style={styles.text}>{item.name}</Text>
+                                <Text style={styles.text}>{item.email}</Text>
                                 <Text style={styles.text}>{item.experience}</Text>
-                                <Text style={styles.text}>{item.mobileNo}</Text>
+                                <Text style={styles.text}>{item.phone}</Text>
                             </View>
                         </View> 
                     
@@ -51,21 +53,25 @@ export default function AreYouaPlumber({navigation}) {
             )
     })
     return (
-        <View>
-             <FlatList 
+        <View style={{flex:1}}>
+            {loading ?  
+            <ActivityIndicator size="large" color="#00ff00" /> 
+            : <FlatList 
                 data = {data}
                 renderItem = {({item}) => {
                   return  renderList(item)
                 }}
-                keyExtractor={item => `${item.id}`}
+                keyExtractor={item => `${item._id}`}
              /> 
+            }
+             
              
              <FAB
                 style={styles.fab}
                 small = {false}
                 icon="plus"
                 theme={{colors: {accent: "blue"}}}
-                onPress={() => console.log('Pressed')}
+                onPress = {() => navigation.navigate('CreatePlumber')}
            />
                  
         </View>
@@ -84,6 +90,8 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         marginLeft: 10,
+        flexDirection: "row",
+
     },
     fab: {
         position: 'absolute',

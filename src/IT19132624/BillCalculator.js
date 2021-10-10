@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     editProfileText: {
         marginTop: -796,
         marginLeft:  '30%',
-        fontSize: 35,
+        fontSize: 25,
         color: '#01239C'
     },
     todoInput: {
@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
     },
     firstText: {
         marginTop: 10,
-        marginLeft: 20,
-        fontSize: 22,
+        marginLeft: 10,
+        fontSize: 18,
         color: '#fff'
     },
     rectangle: {
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
         height: 100,
         backgroundColor: 'white',
         marginLeft:20,
-        marginTop: 10,
+        marginTop: 20,
         borderRadius: 25,
         
     },
@@ -234,14 +234,14 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     charge1: {
-        fontSize: 25,
+        fontSize: 20,
         width: '50%',
         color: 'black',
         marginTop: 5,
         marginLeft: 10,
     },
     charge2: {
-        fontSize: 25,
+        fontSize: 20,
         width: '50%',
         color: 'black',
         marginTop: 5,
@@ -256,14 +256,14 @@ const styles = StyleSheet.create({
         marginLeft: 80,
     },
     tariff: {
-        fontSize: 25,
+        fontSize: 20,
         width: 50,
         color: 'black',
         marginTop: 5,
         marginLeft: 10,
     },
     amount: {
-        fontSize: 25,
+        fontSize: 21,
         width: 100,
         color: 'red',
         marginTop: 5,

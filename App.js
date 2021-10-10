@@ -12,6 +12,7 @@ import BillCalculator from './src/IT19132624/BillCalculator';
 import Plumbers from './src/IT19132624/Plumbers';
 import AreYouaPlumber from './src/IT19132624/AreYouaPlumber'
 import CreatePlumber from './src/IT19132624/CreateAreYouaPlumber'
+import ProfileView from './src/IT19132624/Profile'
 
 
 const Stack = createNativeStackNavigator();
@@ -34,8 +35,11 @@ function App() {
           <Stack.Screen name="PaymentsHistory" component={PaymentsHistory} />
           <Stack.Screen name="BillCalculator" component={BillCalculator} />
           <Stack.Screen name="Plumbers" component={Plumbers} />
+
           <Stack.Screen name="AreYoua" component={AreYouaPlumber} />
           <Stack.Screen name="CreatePlumber" component={CreatePlumber} />
+
+          <Stack.Screen name="ProfileView" component={ProfileView} />
            
           <Stack.Screen name="Register" component={RegisterComponent}/>
           <Stack.Screen name="Profile" component={ProfileComponent} />
