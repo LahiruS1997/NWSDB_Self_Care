@@ -5,28 +5,16 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 require('./models/User')
 const cors = require('cors')
-require('./models/AccModel')
 
 app.use(bodyParser.json())
-
-//test
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
-
-app.use(cors(corsOptions))
-
-const AccModel = mongoose.model("accdata")
+app.use(cors())
 
 const User = mongoose.model("Users")
 
 const mongoURL = "mongodb+srv://explores_CAFE:password1234@clusterx.thoik.mongodb.net/Self_care?retryWrites=true&w=majority"
 
 mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology:true
+    useNewUrlParser: true
 })
 
 mongoose.connection.on("connected", () => {
@@ -56,53 +44,6 @@ app.get('/getSingleUsers', (req, res) => {
     })
 })
 
-//w.m.p.l.waruna
-app.get('/getAccounts',(req,res)=>{
-    AccModel.find({}).then(data=>{
-        res.send(data)
-    }).catch(err=>{
-        console.log(err)
-    })
-})
-
-app.post('/send-acc',(req,res) =>{
-    const accModel = new AccModel({
-        accNo:req.body.accNo,
-        name:req.body.name
-     
-
-    })
-    accModel.save()
-    .then(data=>{
-        console.log(data)
-        res.send("success")
-    }).catch(err=>{
-        console.log(err)
-    })
-   
-})
-
-app.post('/deleteAcc',(req,res)=>{
-    AccModel.findByIdAndRemove(req.body.id)
-    .then(data=>{
-        console.log(data)
-        res.send("deleted")
-    }).catch(err=>{
-        console.log(err)
-    })
-})
-
-app.post('/updateAcc',(req,res) =>{
-    AccModel.findByIdAndUpdate(req.body.id,{
-        accNo:req.body.accNo,
-        name:req.body.name
-    }).then(data=>{
-        console.log(data)
-        res.send(data)
-    }).catch(err=>{
-        console.log(err)
-    })
-})
 
 //app.use('/emp', require('./routes/UserRouter'))
 app.use('/user', require('./routes/UserRouter'))
