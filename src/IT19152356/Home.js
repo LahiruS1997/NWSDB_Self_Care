@@ -216,13 +216,13 @@ const styles = StyleSheet.create({
 
     bellIcon: {
         marginTop: -28,
-        marginRight: 250,
-        marginLeft:302
+        marginRight: -250,
+        marginLeft:292
     },
     exitIcon:{
-        marginTop: -30,
-        marginRight: 250,
-        marginLeft:342
+        marginTop: -28,
+        marginRight: -250,
+        marginLeft:326
     },
     homeText:{
         marginTop: 10,
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
         marginLeft:37,
-        marginTop: -5,
+        marginTop: 25,
         borderRadius: 25,
         opacity:6,
         shadowColor: '#000',
@@ -345,8 +345,8 @@ const styles = StyleSheet.create({
         height: 68,
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
-        marginLeft:3,
-        marginTop: -15,
+        marginLeft:6,
+        marginTop: 15,
         borderRadius: 25,
         opacity:6,
         shadowColor: '#000',
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(103, 155, 240, 1)',
         alignItems:'center',
         marginLeft:4,
-        marginTop: -26,
+        marginTop: 15,
         borderRadius: 25,
         opacity:6,
         shadowColor: '#000',

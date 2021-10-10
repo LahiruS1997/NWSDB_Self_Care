@@ -193,8 +193,8 @@ const styles = StyleSheet.create({
 
     },
     closeBtn:{
-        marginLeft: 330,
-        marginTop: -115
+        marginLeft: 298,
+        marginTop: -90
     },
     miniRectangle:{
         marginTop: 5,

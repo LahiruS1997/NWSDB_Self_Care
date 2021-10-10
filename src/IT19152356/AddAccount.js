@@ -179,18 +179,18 @@ const styles = StyleSheet.create({
     submitRectangle:{
         marginTop: 30,
         marginLeft: 45,
-        width:100,
+        width:400,
         height:40,
         backgroundColor: 'rgba(69, 135, 244, 1)',
         borderRadius:170,
         borderColor: '#053BC5',
-        paddingLeft:28
+        paddingLeft:-528
     },
 
     dissmissRectangle:{
-        marginTop: -40,
-        marginLeft: 225,
-        width:100,
+        marginTop: 110,
+        marginLeft: -105,
+        width:400,
         height:40,
         backgroundColor: 'rgba(69, 135, 244, 1)',
         borderRadius:170,
@@ -199,13 +199,13 @@ const styles = StyleSheet.create({
     },
 
     accSubmit:{
-        marginTop: 10,
+        marginTop: -110,
         fontSize:14,
-        marginLeft:8
+        marginLeft:-108
     },
 
     accDismiss:{
-        marginTop: 10,
+        marginTop: -114,
         fontSize:14,
         marginLeft:8
     },
